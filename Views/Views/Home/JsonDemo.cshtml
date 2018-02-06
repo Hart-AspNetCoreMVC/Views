@@ -1,0 +1,19 @@
+﻿@model string[]
+
+<script id="jdemo" type="application/json">@Json.Serialize(Model)</script>
+<script asp-src-include="lib/jquery/dist/*.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var list = $("#list")
+        JSON.parse($("#jdemo").text()).forEach(function(val) {
+            console.log("Val: " + val);
+            list.append($("<li>").text(val));
+        });
+    });
+</script>
+
+<ul id="list">
+
+</ul>
+  
+    

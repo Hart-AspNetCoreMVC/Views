@@ -1,0 +1,10 @@
+﻿@*PARTIAL: this view renders a partial, within the view that is rendered by the layout*@
+
+@{ Layout = "_Layout";}
+
+    This is the List View
+    @*injects partial content at route Home/List*@
+    @Html.Partial("MyPartial")
+
+Below is the strongly typed partial
+@Html.Partial("MyStronglyTypedPartial", new string [] {"Apple", "Orange", "Pear"})
